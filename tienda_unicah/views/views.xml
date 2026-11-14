@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="tienda_unicah.list">
+      <field name="name">tienda_unicah list</field>
+      <field name="model">tienda_unicah.tienda_unicah</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </list>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="tienda_unicah.action_window">
+      <field name="name">tienda_unicah window</field>
+      <field name="res_model">tienda_unicah.tienda_unicah</field>
+      <field name="view_mode">list,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="tienda_unicah.action_server">
+      <field name="name">tienda_unicah server</field>
+      <field name="model_id" ref="model_tienda_unicah_tienda_unicah"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "list,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="tienda_unicah" id="tienda_unicah.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="tienda_unicah.menu_1" parent="tienda_unicah.menu_root"/>
+    <menuitem name="Menu 2" id="tienda_unicah.menu_2" parent="tienda_unicah.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="tienda_unicah.menu_1_list" parent="tienda_unicah.menu_1"
+              action="tienda_unicah.action_window"/>
+    <menuitem name="Server to list" id="tienda_unicah" parent="tienda_unicah.menu_2"
+              action="tienda_unicah.action_server"/>
+-->
+  </data>
+</odoo>
