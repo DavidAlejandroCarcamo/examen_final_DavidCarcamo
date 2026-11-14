@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_prestamo_list" model="ir.ui.view">
+        <field name="name">unicah.prestamo.list</field>
+        <field name="model">unicah.prestamo</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="solicitante_id"/>
+                <field name="equipo"/>
+                <field name="fecha_prestamo"/>
+                <field name="fecha_devolucion"/>
+                <field name="dias_prestamo"/>
+                <field name="estado"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_prestamo_form" model="ir.ui.view">
+        <field name="name">unicah.prestamo.form</field>
+        <field name="model">unicah.prestamo</field>
+        <field name="arch" type="xml">
+            <form string="Prestamo de Equipo">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="solicitante_id"/>
+                            <field name="equipo"/>
+                            <field name="estado"/>
+                        </group>
+                        <group>
+                            <field name="fecha_prestamo"/>
+                            <field name="fecha_devolucion"/>
+                            <field name="dias_prestamo"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_prestamos" model="ir.actions.act_window">
+        <field name="name">Prestamos UNICAH</field>
+        <field name="res_model">unicah.prestamo</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_prestamos_root"
+              name="Prestamos UNICAH"
+              sequence="20"/>
+
+    <menuitem id="menu_prestamos"
+              name="Registro de prestamos"
+              parent="menu_prestamos_root"
+              action="action_prestamos"
+              sequence="10"/>
+</odoo>
